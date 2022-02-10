@@ -1,4 +1,3 @@
-
 // TODO: move this into it's own lib crate with the cli binary
 #[path = "../url_info.rs"]
 mod url_info;

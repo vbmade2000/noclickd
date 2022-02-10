@@ -123,7 +123,7 @@ impl ResourceInfo {
         }
         components.push(&self.title);
         if let Some(ref description) = self.description {
-        components.push(&description);
+            components.push(&description);
         }
         components.push(&self.content);
         let mut r = components

@@ -1,4 +1,7 @@
 use lazy_static::lazy_static;
+use std::path::Path;
+use config as config_rs;
+
 lazy_static! {
     static ref CONF: Config = Config::default();
 }
@@ -102,4 +105,10 @@ impl Default for Config {
             },
         }
     }
+}
+
+pub fn read_config(path: &Path) -> config_rs::Config {
+    let mut conf = config_rs::Config::default();
+    conf.merge(config_rs::File::with_name(path.to_str().unwrap()));
+    conf
 }
